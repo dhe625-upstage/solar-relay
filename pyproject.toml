@@ -1,0 +1,19 @@
+[project]
+name = "solar-relay"
+version = "0.1.0"
+description = "Relay OpenAI request fields to the Solar chat template and logits processor channels."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.entry-points."vllm.general_plugins"]
+solar_relay = "solar_relay.hosts.vllm_plugin:register"
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
